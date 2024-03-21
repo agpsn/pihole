@@ -40,4 +40,3 @@
 0.0.0.0 logservice1.hicloud.com
 0.0.0.0 smetrics.samsung.com
 0.0.0.0 samsung-com.112.2o7.net
-0.0.0.0 
