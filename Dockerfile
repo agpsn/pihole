@@ -1,5 +1,6 @@
 #docker buildx build --no-cache --pull --tag agpsn/pihole:latest .
 FROM pihole/pihole:latest
+
 COPY root/* /
 
 RUN /bin/bash /install.sh && rm -f /install.sh
