@@ -10,6 +10,7 @@ clear; set -eu
 #pihole.txt	= sorted .list3, final output
 
 	rm -rf .list1 .list2 .list3 .list4
+	[[ ! -f "urls.txt" ]] && wget -O urls.txt "https://raw.githubusercontent.com/agpsn/pihole/master/urls.txt"
 	[[ -f "urls.txt" ]] && sort -u < urls.txt >> .list1
 	[[ -f ".list1" ]] && cat .list1 | grep -v ^"#" | grep -v "^$" >> .list2
 	[[ -f ".list2" ]] && while read -r URL; do echo "Processing $URL" && wget -O- -q "$URL" >> .list3; done < .list2
